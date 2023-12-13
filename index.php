@@ -10,14 +10,16 @@ function foo(int $a, int $b, closure $c = NULL): float
     return $a * $b;
 }
 
-//$a = 4;
-//$b = 5;
 $a = (int) readline("Введите первое число: ");
 $b = (int) readline("Введите второе число: ");
-$showDecision = (int) readline("Введите \"1\", что бы показать результат вычисления и \"0\", что бы нет: ");
-if ($showDecision ==)
-//$result = foo($a, $b, function ($arg) {
-//    echo "Результат умножения: $arg";
-//});
-//$result = foo($a, $b);
-echo $result;
+$enterDecision = (int) readline("Введите \"1\", что бы показать результат вычисления: ");
+switch ($enterDecision) {
+    case 1:
+        $result = foo($a, $b, function ($arg) {
+            echo "Результат умножения: $arg";
+        });
+        break;
+    default:
+        $result = foo($a, $b);
+        break;
+}

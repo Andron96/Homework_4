@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 function foo(int $a, int $b, closure $c = NULL): float
 {
-    if (is_null($c)) {
-        return $a * $b;
+    $result = $a * $b;
+    if (!is_null($c)) {
+        $c($result);
     }
-    $c($a * $b);
-    return $a * $b;
+    return $result;
 }
 
 $a = (int) readline("Введите первое число: ");

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-function foo(int $a, int $b, closure $c = NULL): float
+function foo(int $a, int $b, ?closure $c = NULL): float
 {
     $result = $a * $b;
     if (!is_null($c)) {
